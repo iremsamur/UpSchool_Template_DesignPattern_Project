@@ -1,0 +1,26 @@
+﻿@model List<AppUser>
+@{
+    Layout = null;
+    int count = 0;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<br />
+<br />
+@foreach(var item in Model){
+    count++;
+    if(count==1|| count%3==1){
+        @Html.Raw("<div class='row row-cols-1 row-cols-md-3 g-4'>")
+            <!--Html.Raw c# içinde html kodları yazmamızı sağlar.
+                Burada %3 yaparak sayfada 3 lük kartlar oluşturmayı sağlar
+            -->
+    }
+    <div class="col">
+        <user-card app-user="item"></user-card>
+
+    </div>
+    if(count%3==0){
+        @Html.Raw("</div>")
+    }
+}
+
+
