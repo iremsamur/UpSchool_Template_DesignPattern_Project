@@ -12,10 +12,13 @@
         @Html.Raw("<div class='row row-cols-1 row-cols-md-3 g-4'>")
             <!--Html.Raw c# içinde html kodları yazmamızı sağlar.
                 Burada %3 yaparak sayfada 3 lük kartlar oluşturmayı sağlar
+                
             -->
     }
     <div class="col">
-        <user-card app-user="item"></user-card>
+        <user-card app-user="item"></user-card> <!--kendi hazırladığım UserCardTagHelper
+            tag helper'ı'
+        -->
 
     </div>
     if(count%3==0){
